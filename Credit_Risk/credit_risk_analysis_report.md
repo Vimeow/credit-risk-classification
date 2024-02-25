@@ -40,4 +40,4 @@ Describe the balanced accuracy scores and the precision and recall scores of the
 
 - Summarise the results of the machine learning model, and include a recommendation on the model to use, if any:
 
-The logistic regression model performed reasonably well on the provided dataset with high accuracy (0.99). However, in this example, it is more important to predict the potential "high-risk loan" and the precision and recall values of the model (0.87 and 0.89, respectively) are not very high when making predictions for this group, suggesting that another model should be investigated.
+The logistic regression model performed reasonably well on the provided dataset with high accuracy (0.99). However, in this example, it is more important to predict the potential "high-risk loan" and the precision and recall values of the model (0.87 and 0.89, respectively) are not very high when making prediction for this group, suggesting that another model should be investigated.
