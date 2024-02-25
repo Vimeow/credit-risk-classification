@@ -1,57 +1,43 @@
-# Module 12 Report Template
+Date: 25/02/2024
+Person: Vy Nguyen
+Assignment: Module 20 - Credit risk classification using logistic regression model
+
+# Module 20 Report
 
 ## Overview of the Analysis
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+- Purpose of the analysis:
 
-- Explain the purpose of the analysis.
+In this Challenge, a dataset of historical lending activity from a peer-to-peer lending services was used to train and evaluate a Logistic Regression model based on loan risk. The trained model can be used to identify the creditworthiness of borrowers.
 
-"In this Challenge, you’ll use various techniques to train and evaluate a model based on loan risk. You’ll use a dataset of historical lending activity from a peer-to-peer lending services company to build a model that can identify the creditworthiness of borrowers."
+- Explain what financial information the data was on, and what you needed to predict:
 
-- Explain what financial information the data was on, and what you needed to predict.
+The dataset contains information on loan_size, interest_rate, borrower_income, debt_to_income, num_of_accounts, derogatory_marks, total_debt and loan_status. Using this dataset to train the Logistic Regression model so that it can predict the loan_status.
 
-information = loan_size, interest_rate, borrower_income, debt_to_income, num_of_accounts, derogatory_marks, total_debt,
+- Provide basic information about the variables you were trying to predict:
 
-predict = loan_status
+The variable that the model will predict is "loan_status" which encoded as "0" which means that the loan is healthy, and "1" which means that the loan has a high risk of defaulting.
 
-- Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
+- Describe the stages of the machine learning process you went through as part of this analysis:
 
-"A value of 0 in the “loan_status” column means that the loan is healthy. A value of 1 means that the loan has a high risk of defaulting."
+The machine learning process included: (1) separate features (information) and the labels (loan_status); (2) split data in to training and testing sets; (3) create a Logistic Regression model; (4) fit the model to the training data set; (5) predict the labels using testing data set; and (6) evaluate model's performance using confusion matrix and classification report.
 
-- Describe the stages of the machine learning process you went through as part of this analysis.
+- Briefly touch on Logistic Regression model method:
 
-Separate features (information) and the labels (loan_status).
-
-Split data in to training and testing sets.
-
-Create a model
-
-Fit the model to the training data set.
-
-Predicted the labels usinf testing data set.
-
-Evaluate model's performance.
-
-- Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
-
-Calculating the probability using sigmoid function (between 0 and 1), then predict if the data point is belong to group 0 or 1.
+Logistic regression is a statistical method used for binary classification tasks, where the goal is to predict the probability that an instance belongs to a particular class. Logistic regression models the probability using the sigmoid function. Sigmoid function calculates the probability (between 0 and 1) to predict if the data point is belong to group 0 or 1.
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
+Describe the balanced accuracy scores and the precision and recall scores of the Logistic Regression model:
 
-- Machine Learning Model 1:
+- In general, the Logistic Regression model made a prediction with a quite high accuracy (0.99).
 
-  - Description of Model 1 Accuracy, Precision, and Recall scores.
+- The Logistic Regression model predicts the `0` (healthy loan) correctly for almost the healthy loan cases (precision = 0.996 and recall = 0.996).
 
-- Machine Learning Model 2:
-  - Description of Model 2 Accuracy, Precision, and Recall scores.
+- However, for the `1` (high-risk loan) labels, there are some false negative and false positive in the prediction which resulting a lower precision (0.87) and recall (0.89) values as shown in the classification report for the model.
 
 ## Summary
 
-Summarise the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+- Summarise the results of the machine learning model, and include a recommendation on the model to use, if any:
 
-- Which one seems to perform best? How do you know it performs best?
-- Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
+The logistic regression model performed reasonably well on the provided dataset with high accuracy (0.99). However, in this example, it is more important to predict the potential "high-risk loan," and the precision and recall values of the model (0.87 and 0.89, respectively) are not very high when making predictions for this group, suggesting that another model should be investigated.
